@@ -1,0 +1,2233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="theme-color" content="#0E1112" />
+<title>Abdulhamid Hassen — Video &amp; Graphics Designer | Portfolio</title>
+<meta name="description" content="Video editor and graphics designer with 5 years' experience. Editing and design for broadcast, YouTube, and brands. View work and book a call." />
+
+<!-- Open Graph -->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Abdulhamid Hassen — Video &amp; Graphics Designer | Portfolio" />
+<meta property="og:description" content="Video editor and graphics designer with 5 years' experience. Editing and design for broadcast, YouTube, and brands." />
+<meta property="og:image" content="/og.jpg" />
+<meta property="og:url" content="https://abdulhamidedits.com" />
+<meta name="twitter:card" content="summary_large_image" />
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+<style>
+/* ─────────────────────────────────────────────────────────────
+   DESIGN TOKENS
+   ───────────────────────────────────────────────────────────── */
+:root {
+  --ink:       #0E1112;
+  --ink-soft:  #15191B;
+  --ink-line:  #242A2D;
+  --fg:        #F2F5F6;
+  --muted:     #9BA5A9;
+  --accent:    #FF6B2C;
+  --accent-hover: #FF8348;
+  --accent-ink: #0E1112;
+
+  --font-display: "Anton", Impact, sans-serif;
+  --font-sans:    "Inter", system-ui, -apple-system, sans-serif;
+  --font-mono:    "JetBrains Mono", ui-monospace, "SFMono-Regular", monospace;
+
+  --page: 1200px;
+  --radius: 14px;
+  --radius-lg: 20px;
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* ─────────────────────────────────────────────────────────────
+   RESET & BASE
+   ───────────────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 5.5rem; -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--ink);
+  color: var(--fg);
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+img, svg, video { display: block; max-width: 100%; }
+a { color: inherit; text-decoration: none; }
+button { font: inherit; color: inherit; background: none; border: 0; cursor: pointer; }
+h1, h2, h3, h4, p, figure, blockquote, dl, dd { margin: 0; }
+ul { margin: 0; padding: 0; list-style: none; }
+::selection { background: var(--accent); color: var(--accent-ink); }
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* ─────────────────────────────────────────────────────────────
+   UTILITIES
+   ───────────────────────────────────────────────────────────── */
+.container {
+  width: 100%;
+  max-width: var(--page);
+  margin-inline: auto;
+  padding-inline: 20px;
+}
+@media (min-width: 640px) { .container { padding-inline: 32px; } }
+
+.label-mono {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  color: var(--muted);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 100;
+}
+.skip-link:focus {
+  left: 16px;
+  top: 16px;
+  position: fixed;
+  background: var(--accent);
+  color: var(--accent-ink);
+  padding: 10px 18px;
+  border-radius: 6px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+}
+
+/* ─────────────────────────────────────────────────────────────
+   HEADER
+   ───────────────────────────────────────────────────────────── */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  border-bottom: 1px solid transparent;
+  transition: background-color 0.2s, border-color 0.2s;
+}
+.site-header.scrolled,
+.site-header.open {
+  background: rgba(14, 17, 18, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom-color: var(--ink-line);
+}
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  height: 64px;
+}
+@media (min-width: 640px) { .header-inner { height: 80px; } }
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.brand-mark {
+  width: 36px; height: 36px;
+  display: grid;
+  place-items: center;
+  border-radius: 8px;
+  background: var(--accent);
+  color: var(--accent-ink);
+  font-family: var(--font-display);
+  font-size: 14px;
+  letter-spacing: 0.04em;
+}
+.brand-name {
+  display: none;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  color: var(--muted);
+}
+@media (min-width: 1024px) { .brand-name { display: block; } }
+
+.primary-nav { display: none; gap: 4px; }
+@media (min-width: 768px) { .primary-nav { display: flex; align-items: center; } }
+
+.nav-link {
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--muted);
+  transition: color 0.15s;
+}
+.nav-link:hover { color: var(--fg); }
+.nav-link[aria-current="location"] { color: var(--accent); }
+
+.header-actions { display: flex; align-items: center; gap: 12px; }
+
+.btn-book {
+  display: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  background: var(--accent);
+  color: var(--accent-ink);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  transition: background-color 0.15s;
+}
+.btn-book:hover { background: var(--accent-hover); }
+@media (min-width: 640px) { .btn-book { display: inline-flex; } }
+
+.menu-toggle {
+  width: 40px; height: 40px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--ink-line);
+  border-radius: 8px;
+  transition: border-color 0.15s;
+}
+.menu-toggle:hover { border-color: var(--accent); }
+@media (min-width: 768px) { .menu-toggle { display: none; } }
+
+.mobile-menu {
+  display: none;
+  border-top: 1px solid var(--ink-line);
+  background: var(--ink);
+}
+.mobile-menu.open { display: block; }
+@media (min-width: 768px) { .mobile-menu { display: none !important; } }
+
+.mobile-menu nav {
+  display: flex;
+  flex-direction: column;
+  padding-block: 16px;
+}
+.mobile-menu a {
+  padding: 16px 0;
+  border-bottom: 1px solid var(--ink-line);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--muted);
+}
+.mobile-menu a:last-of-type { border-bottom: 0; }
+.mobile-menu a:hover { color: var(--fg); }
+.mobile-menu .btn-book {
+  display: block;
+  text-align: center;
+  margin-top: 20px;
+  padding: 14px;
+}
+
+/* ─────────────────────────────────────────────────────────────
+   HERO
+   ───────────────────────────────────────────────────────────── */
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding-block: 64px 80px;
+}
+@media (min-width: 640px) { .hero { padding-block: 96px 112px; } }
+@media (min-width: 1024px) { .hero { padding-block: 112px 128px; } }
+
+.hero-grid-bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(to right, rgba(255,255,255,0.045) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255,255,255,0.045) 1px, transparent 1px);
+  background-size: 56px 56px;
+  -webkit-mask-image: radial-gradient(70% 60% at 50% 0%, black, transparent);
+  mask-image: radial-gradient(70% 60% at 50% 0%, black, transparent);
+}
+.hero-glow {
+  position: absolute;
+  top: -160px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 820px;
+  height: 520px;
+  border-radius: 999px;
+  background: rgba(255, 107, 44, 0.10);
+  filter: blur(140px);
+  pointer-events: none;
+}
+
+.hero-inner {
+  position: relative;
+  display: grid;
+  gap: 56px;
+}
+@media (min-width: 1024px) {
+  .hero-inner {
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 64px;
+    align-items: start;
+  }
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px;
+  border: 1px solid var(--ink-line);
+  border-radius: 999px;
+  background: var(--ink-soft);
+  font-family: var(--font-mono);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  color: var(--muted);
+}
+.hero-badge-dot {
+  width: 6px; height: 6px;
+  border-radius: 999px;
+  background: var(--accent);
+}
+
+.hero-title {
+  margin-top: 28px;
+  font-family: var(--font-display);
+  font-size: clamp(2.75rem, 8vw, 5.5rem);
+  line-height: 0.9;
+  letter-spacing: -0.02em;
+  font-weight: 400;
+}
+.hero-title .accent { color: var(--accent); }
+
+.hero-lede {
+  margin-top: 28px;
+  max-width: 36rem;
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--muted);
+}
+@media (min-width: 640px) { .hero-lede { font-size: 18px; } }
+
+.hero-ctas {
+  margin-top: 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+@media (min-width: 640px) { .hero-ctas { flex-direction: row; align-items: center; } }
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px 24px;
+  border-radius: 8px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  transition: background-color 0.15s, border-color 0.15s, color 0.15s;
+}
+.btn-primary { background: var(--accent); color: var(--accent-ink); }
+.btn-primary:hover { background: var(--accent-hover); }
+.btn-secondary {
+  border: 1px solid var(--ink-line);
+  color: var(--fg);
+}
+.btn-secondary:hover { border-color: var(--accent); color: var(--accent); }
+
+.hero-stats {
+  margin-top: 56px;
+  padding-top: 32px;
+  border-top: 1px solid var(--ink-line);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px 24px;
+}
+@media (min-width: 640px) { .hero-stats { grid-template-columns: repeat(4, 1fr); } }
+.hero-stat dd {
+  margin-top: 8px;
+  font-family: var(--font-display);
+  font-size: 24px;
+  letter-spacing: -0.01em;
+}
+@media (min-width: 640px) { .hero-stat dd { font-size: 28px; } }
+
+/* Showreel card */
+.showreel {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--ink-line);
+  border-radius: var(--radius-lg);
+  background: var(--ink-soft);
+}
+@media (min-width: 1024px) { .showreel { margin-top: 24px; } }
+.showreel-frame {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  width: 100%;
+}
+.showreel-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(to right, rgba(255,255,255,0.045) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255,255,255,0.045) 1px, transparent 1px);
+  background-size: 56px 56px;
+}
+.showreel-glow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(90% 70% at 50% 110%, rgba(255,107,44,0.22), transparent 65%);
+}
+.showreel-content {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 24px;
+}
+@media (min-width: 640px) { .showreel-content { padding: 28px; } }
+.showreel-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.showreel-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  text-align: center;
+}
+.showreel-play {
+  width: 64px; height: 64px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(255,107,44,0.4);
+  border-radius: 999px;
+  background: rgba(255,107,44,0.1);
+  color: var(--accent);
+}
+.showreel-copy {
+  max-width: 16rem;
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--muted);
+}
+.showreel-cta {
+  padding: 12px 20px;
+  border: 1px solid var(--ink-line);
+  border-radius: 8px;
+  background: rgba(14,17,18,0.7);
+  backdrop-filter: blur(8px);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--fg);
+  transition: border-color 0.15s, color 0.15s;
+}
+.showreel-cta:hover { border-color: var(--accent); color: var(--accent); }
+
+/* ─────────────────────────────────────────────────────────────
+   SECTIONS
+   ───────────────────────────────────────────────────────────── */
+.section { padding-block: 80px; }
+@media (min-width: 640px) { .section { padding-block: 112px; } }
+
+.section-heading { max-width: 48rem; }
+.section-title {
+  margin-top: 16px;
+  font-family: var(--font-display);
+  font-size: clamp(2.25rem, 6vw, 3.75rem);
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+  font-weight: 400;
+}
+.section-intro {
+  margin-top: 20px;
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--muted);
+}
+@media (min-width: 640px) { .section-intro { font-size: 18px; } }
+
+/* ─────────────────────────────────────────────────────────────
+   WORK GRID
+   ───────────────────────────────────────────────────────────── */
+.work-header {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+@media (min-width: 1024px) {
+  .work-header {
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+  }
+}
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.filter-btn {
+  padding: 8px 16px;
+  border: 1px solid var(--ink-line);
+  border-radius: 999px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--muted);
+  transition: border-color 0.15s, color 0.15s, background-color 0.15s;
+}
+.filter-btn:hover { border-color: rgba(255,107,44,0.5); color: var(--fg); }
+.filter-btn[aria-pressed="true"] {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: var(--accent-ink);
+}
+
+.work-grid {
+  margin-top: 48px;
+  display: grid;
+  gap: 24px;
+  grid-template-columns: 1fr;
+}
+@media (min-width: 640px) { .work-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1024px) { .work-grid { grid-template-columns: repeat(3, 1fr); } }
+
+.project-card {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border: 1px solid var(--ink-line);
+  border-radius: var(--radius);
+  background: var(--ink-soft);
+  text-align: left;
+  transition: border-color 0.2s;
+}
+.project-card:hover { border-color: rgba(255,107,44,0.6); }
+
+.project-thumb {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  width: 100%;
+  overflow: hidden;
+  background: var(--ink);
+}
+.project-thumb-placeholder {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  background: radial-gradient(120% 120% at 20% 0%, rgba(255,107,44,0.16), transparent 62%);
+}
+.project-thumb img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s var(--ease);
+}
+.project-card:hover .project-thumb img { transform: scale(1.03); }
+
+.project-tag {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  padding: 4px 10px;
+  border: 1px solid var(--ink-line);
+  border-radius: 999px;
+  background: rgba(14,17,18,0.85);
+  backdrop-filter: blur(6px);
+  font-family: var(--font-mono);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--fg);
+}
+.project-play {
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  width: 36px; height: 36px;
+  display: grid;
+  place-items: center;
+  border-radius: 999px;
+  background: var(--accent);
+  color: var(--accent-ink);
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+.project-card:hover .project-play,
+.project-card:focus-visible .project-play { opacity: 1; }
+
+.project-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 12px;
+  padding: 20px;
+}
+.project-title-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+}
+.project-title {
+  font-family: var(--font-display);
+  font-size: 20px;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  font-weight: 400;
+}
+@media (min-width: 640px) { .project-title { font-size: 24px; } }
+.project-year {
+  flex-shrink: 0;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--muted);
+}
+.project-client {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--accent);
+}
+.project-desc {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--muted);
+}
+.project-cta {
+  margin-top: auto;
+  padding-top: 8px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--fg);
+  transition: color 0.15s;
+}
+.project-card:hover .project-cta { color: var(--accent); }
+.project-cta span { transition: transform 0.2s; }
+.project-card:hover .project-cta span { transform: translateX(4px); }
+
+.empty-state {
+  padding: 40px;
+  border: 1px dashed var(--ink-line);
+  border-radius: var(--radius);
+  text-align: center;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--muted);
+}
+
+/* ─────────────────────────────────────────────────────────────
+   SERVICES
+   ───────────────────────────────────────────────────────────── */
+.services-grid {
+  margin-top: 48px;
+  display: grid;
+  gap: 1px;
+  overflow: hidden;
+  border: 1px solid var(--ink-line);
+  border-radius: var(--radius-lg);
+  background: var(--ink-line);
+  grid-template-columns: 1fr;
+}
+@media (min-width: 640px) { .services-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1024px) { .services-grid { grid-template-columns: repeat(3, 1fr); } }
+
+.service {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 24px;
+  background: var(--ink-soft);
+}
+@media (min-width: 640px) { .service { padding: 28px; } }
+.service-title {
+  font-family: var(--font-display);
+  font-size: 20px;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  font-weight: 400;
+}
+@media (min-width: 640px) { .service-title { font-size: 24px; } }
+.service-desc {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--muted);
+}
+.service-bullets {
+  margin-top: auto;
+  padding-top: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.service-bullets li {
+  padding: 4px 12px;
+  border: 1px solid var(--ink-line);
+  border-radius: 999px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--muted);
+}
+
+.services-cta {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: flex-start;
+  padding: 24px;
+  border: 1px solid var(--ink-line);
+  border-radius: var(--radius-lg);
+  background: var(--ink-soft);
+}
+@media (min-width: 640px) {
+  .services-cta {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 32px;
+  }
+}
+.services-cta p {
+  max-width: 36rem;
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--muted);
+}
+@media (min-width: 640px) { .services-cta p { font-size: 16px; } }
+
+/* ─────────────────────────────────────────────────────────────
+   TESTIMONIALS
+   ───────────────────────────────────────────────────────────── */
+.testimonials-grid {
+  margin-top: 48px;
+  display: grid;
+  gap: 24px;
+  grid-template-columns: 1fr;
+}
+@media (min-width: 768px) { .testimonials-grid { grid-template-columns: repeat(3, 1fr); } }
+
+.testimonial {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  height: 100%;
+  padding: 24px;
+  border: 1px solid var(--ink-line);
+  border-radius: var(--radius-lg);
+  background: var(--ink-soft);
+}
+@media (min-width: 640px) { .testimonial { padding: 28px; } }
+.testimonial-quote-mark {
+  font-family: var(--font-display);
+  font-size: 36px;
+  line-height: 1;
+  color: var(--accent);
+}
+.testimonial blockquote {
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--fg);
+}
+@media (min-width: 640px) { .testimonial blockquote { font-size: 16px; } }
+.testimonial figcaption {
+  margin-top: auto;
+  padding-top: 16px;
+  border-top: 1px solid var(--ink-line);
+}
+.testimonial-author {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--fg);
+}
+.testimonial-role {
+  display: block;
+  margin-top: 4px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--muted);
+}
+.testimonial-source {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 8px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--accent);
+}
+.testimonial-source:hover { text-decoration: underline; }
+
+/* ─────────────────────────────────────────────────────────────
+   ABOUT
+   ───────────────────────────────────────────────────────────── */
+.about-grid {
+  display: grid;
+  gap: 56px;
+}
+@media (min-width: 1024px) {
+  .about-grid {
+    grid-template-columns: 0.85fr 1.15fr;
+    gap: 64px;
+  }
+}
+.about-photo {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  width: 100%;
+  overflow: hidden;
+  border: 1px solid var(--ink-line);
+  border-radius: var(--radius-lg);
+  background: var(--ink-soft);
+}
+.about-photo img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.about-photo-placeholder {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+}
+
+.about-bio {
+  margin-top: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--muted);
+}
+.about-bio .highlight { color: var(--fg); }
+
+.about-block {
+  margin-top: 40px;
+  padding-top: 32px;
+  border-top: 1px solid var(--ink-line);
+}
+.tools-list {
+  margin-top: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.tools-list li {
+  padding: 6px 12px;
+  border: 1px solid var(--ink-line);
+  border-radius: 6px;
+  background: var(--ink-soft);
+  font-family: var(--font-mono);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--muted);
+}
+.about-facts {
+  margin-top: 40px;
+  padding-top: 32px;
+  border-top: 1px solid var(--ink-line);
+  display: grid;
+  gap: 24px;
+}
+@media (min-width: 640px) { .about-facts { grid-template-columns: repeat(2, 1fr); } }
+.about-fact dd {
+  margin-top: 8px;
+  font-family: var(--font-display);
+  font-size: 30px;
+  letter-spacing: -0.01em;
+}
+
+/* ─────────────────────────────────────────────────────────────
+   CONTACT
+   ───────────────────────────────────────────────────────────── */
+.contact-grid {
+  display: grid;
+  gap: 56px;
+}
+@media (min-width: 1024px) {
+  .contact-grid {
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 64px;
+  }
+}
+.contact-details {
+  margin-top: 40px;
+  padding-top: 32px;
+  border-top: 1px solid var(--ink-line);
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.contact-details dd { margin-top: 8px; }
+.contact-link {
+  font-size: 18px;
+  color: var(--fg);
+  transition: color 0.15s;
+}
+.contact-link:hover { color: var(--accent); }
+.socials {
+  margin-top: 12px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.socials a {
+  padding: 6px 12px;
+  border: 1px solid var(--ink-line);
+  border-radius: 6px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--muted);
+  transition: border-color 0.15s, color 0.15s;
+}
+.socials a:hover { border-color: var(--accent); color: var(--accent); }
+
+.contact-form-wrap {
+  padding: 24px;
+  border: 1px solid var(--ink-line);
+  border-radius: var(--radius-lg);
+  background: var(--ink-soft);
+}
+@media (min-width: 640px) { .contact-form-wrap { padding: 32px; } }
+
+.form-row {
+  display: grid;
+  gap: 20px;
+}
+@media (min-width: 640px) { .form-row { grid-template-columns: repeat(2, 1fr); } }
+
+.form-field { display: flex; flex-direction: column; }
+.form-field label { margin-bottom: 8px; }
+.form-field input,
+.form-field select,
+.form-field textarea {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid var(--ink-line);
+  border-radius: 8px;
+  background: var(--ink);
+  color: var(--fg);
+  font-family: var(--font-sans);
+  font-size: 14px;
+  transition: border-color 0.15s;
+}
+.form-field input::placeholder,
+.form-field textarea::placeholder { color: rgba(155,165,169,0.6); }
+.form-field input:focus,
+.form-field select:focus,
+.form-field textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+.form-field textarea { resize: vertical; min-height: 120px; }
+
+.honeypot {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.form-status {
+  min-height: 1.25rem;
+  font-size: 14px;
+}
+.form-status.success { color: var(--accent); }
+.form-status.error { color: var(--accent); }
+
+/* ─────────────────────────────────────────────────────────────
+   FOOTER
+   ───────────────────────────────────────────────────────────── */
+.site-footer { border-top: 1px solid var(--ink-line); }
+.footer-top {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding-block: 48px;
+}
+@media (min-width: 640px) {
+  .footer-top {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding-block: 56px;
+  }
+}
+.footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.footer-brand-name {
+  font-family: var(--font-display);
+  font-size: 18px;
+  letter-spacing: -0.01em;
+}
+.footer-tagline {
+  margin-top: 16px;
+  max-width: 20rem;
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--muted);
+}
+.footer-nav ul {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+@media (min-width: 640px) {
+  .footer-nav ul { flex-direction: row; gap: 24px; }
+}
+.footer-nav a,
+.footer-social a {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--muted);
+  transition: color 0.15s;
+}
+.footer-nav a:hover { color: var(--fg); }
+.footer-social {
+  display: flex;
+  gap: 16px;
+}
+.footer-social a:hover { color: var(--accent); }
+
+.footer-bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding-block: 24px;
+  border-top: 1px solid var(--ink-line);
+}
+@media (min-width: 640px) {
+  .footer-bottom {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+.footer-bottom p {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--muted);
+}
+
+/* ─────────────────────────────────────────────────────────────
+   MODAL
+   ───────────────────────────────────────────────────────────── */
+dialog {
+  margin: auto;
+  max-height: 90vh;
+  width: min(92vw, 56rem);
+  padding: 0;
+  overflow-y: auto;
+  border: 1px solid var(--ink-line);
+  border-radius: var(--radius-lg);
+  background: var(--ink-soft);
+  color: var(--fg);
+}
+dialog::backdrop {
+  background: rgba(6, 8, 9, 0.75);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+dialog[open] {
+  animation: dialog-in 180ms var(--ease);
+}
+dialog[open]::backdrop {
+  animation: fade-in 180ms ease-out;
+}
+@keyframes dialog-in {
+  from { opacity: 0; transform: translateY(10px) scale(0.98); }
+  to   { opacity: 1; transform: none; }
+}
+@keyframes fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.modal-inner {
+  position: relative;
+  padding: 24px;
+}
+@media (min-width: 640px) { .modal-inner { padding: 32px; } }
+
+.modal-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  z-index: 10;
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--ink-line);
+  border-radius: 999px;
+  background: rgba(14,17,18,0.8);
+  backdrop-filter: blur(8px);
+  color: var(--muted);
+  transition: border-color 0.15s, color 0.15s;
+}
+.modal-close:hover { border-color: var(--accent); color: var(--accent); }
+
+.modal-title {
+  margin-top: 12px;
+  max-width: 42rem;
+  font-family: var(--font-display);
+  font-size: clamp(1.75rem, 4vw, 2.25rem);
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+  font-weight: 400;
+}
+.modal-client {
+  margin-top: 8px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--accent);
+}
+.modal-video {
+  margin-top: 24px;
+  aspect-ratio: 16 / 9;
+  width: 100%;
+  overflow: hidden;
+  border: 1px solid var(--ink-line);
+  border-radius: var(--radius);
+  background: var(--ink);
+}
+.modal-video iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+.modal-video-placeholder {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 100%;
+}
+.modal-desc {
+  margin-top: 24px;
+  max-width: 42rem;
+  line-height: 1.7;
+  color: var(--muted);
+}
+.modal-results {
+  margin-top: 32px;
+  padding-top: 24px;
+  border-top: 1px solid var(--ink-line);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+@media (min-width: 640px) { .modal-results { grid-template-columns: repeat(4, 1fr); } }
+.modal-results dd {
+  margin-top: 4px;
+  font-family: var(--font-display);
+  font-size: 24px;
+  color: var(--accent);
+}
+.modal-live {
+  margin-top: 32px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* ─────────────────────────────────────────────────────────────
+   REVEAL ANIMATION
+   ───────────────────────────────────────────────────────────── */
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.55s var(--ease), transform 0.55s var(--ease);
+  will-change: opacity, transform;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* ─────────────────────────────────────────────────────────────
+   REDUCED MOTION
+   ───────────────────────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+  .reveal { opacity: 1; transform: none; }
+  dialog[open], dialog[open]::backdrop { animation: none; }
+}
+</style>
+</head>
+<body>
+
+<a href="#main" class="skip-link">Skip to content</a>
+
+<!-- ═══════════════════════════════════════════════════════════
+     HEADER
+     ═══════════════════════════════════════════════════════════ -->
+<header class="site-header" id="site-header">
+  <div class="container header-inner">
+    <a href="#top" class="brand" aria-label="Abdulhamid Hassen — home">
+      <span class="brand-mark" aria-hidden="true">AH</span>
+      <span class="brand-name">Abdulhamid Hassen</span>
+    </a>
+
+    <nav class="primary-nav" aria-label="Primary">
+      <a href="#work" class="nav-link" data-nav="work">Work</a>
+      <a href="#services" class="nav-link" data-nav="services">Services</a>
+      <a href="#about" class="nav-link" data-nav="about">About</a>
+      <a href="#contact" class="nav-link" data-nav="contact">Contact</a>
+    </nav>
+
+    <div class="header-actions">
+      <a href="tel:+251922094236" class="btn-book">Call 0922 094 236</a>
+      <button
+        type="button"
+        class="menu-toggle"
+        id="menu-toggle"
+        aria-expanded="false"
+        aria-controls="mobile-menu"
+        aria-label="Open menu">
+        <svg width="16" height="12" viewBox="0 0 16 12" fill="none" aria-hidden="true">
+          <path d="M0 1h16M0 6h16M0 11h16" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <div class="mobile-menu" id="mobile-menu">
+    <nav class="container" aria-label="Mobile">
+      <a href="#work">Work</a>
+      <a href="#services">Services</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+      <a href="tel:+251922094236" class="btn btn-primary">Call 0922 094 236</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ═══════════════════════════════════════════════════════════
+     HERO
+     ═══════════════════════════════════════════════════════════ -->
+<section class="hero" id="top">
+  <div class="hero-grid-bg" aria-hidden="true"></div>
+  <div class="hero-glow" aria-hidden="true"></div>
+
+  <div class="container hero-inner">
+    <div>
+      <p class="hero-badge reveal">
+        <span class="hero-badge-dot" aria-hidden="true"></span>
+        Video &amp; Graphics Designer · Available for new projects
+      </p>
+
+      <h1 class="hero-title reveal" style="transition-delay:50ms">
+        Edits that keep<br>
+        viewers <span class="accent">watching.</span>
+      </h1>
+
+      <p class="hero-lede reveal" style="transition-delay:100ms">
+        I'm Abdulhamid Hassen — a video editor and graphics designer with
+        5 years' experience, currently at Harari Broadcasting Network. I cut
+        for retention first: tighter pacing, cleaner sound, and graphics that
+        make the point land.
+      </p>
+
+      <div class="hero-ctas reveal" style="transition-delay:150ms">
+        <a href="#work" class="btn btn-primary">View work <span aria-hidden="true">→</span></a>
+        <a href="#contact" class="btn btn-secondary">Get a quote</a>
+      </div>
+
+      <dl class="hero-stats reveal" style="transition-delay:200ms">
+        <div class="hero-stat">
+          <dt class="label-mono">Years editing</dt>
+          <dd>5+</dd>
+        </div>
+        <div class="hero-stat">
+          <dt class="label-mono">Broadcast experience</dt>
+          <dd>Harari TV</dd>
+        </div>
+        <div class="hero-stat">
+          <dt class="label-mono">Views edited</dt>
+          <dd>[ADD NUMBER]</dd>
+        </div>
+        <div class="hero-stat">
+          <dt class="label-mono">Videos delivered</dt>
+          <dd>[ADD NUMBER]</dd>
+        </div>
+      </dl>
+    </div>
+
+    <div class="reveal" style="transition-delay:150ms">
+      <div class="showreel">
+        <div class="showreel-frame">
+          <div class="showreel-grid" aria-hidden="true"></div>
+          <div class="showreel-glow" aria-hidden="true"></div>
+
+          <div class="showreel-content">
+            <div class="showreel-row">
+              <span class="label-mono">Showreel</span>
+              <span class="label-mono">[ADD DURATION]</span>
+            </div>
+
+            <div class="showreel-center">
+              <span class="showreel-play" aria-hidden="true">
+                <svg width="18" height="20" viewBox="0 0 18 20" fill="currentColor">
+                  <path d="M0 0l18 10L0 20z"/>
+                </svg>
+              </span>
+              <p class="showreel-copy">
+                A 60-second cut of recent work across broadcast, long-form,
+                shorts and brand films.
+              </p>
+              <a href="#work" class="showreel-cta">Watch showreel</a>
+            </div>
+
+            <div class="showreel-row">
+              <span class="label-mono">Timeline</span>
+              <span class="label-mono">00:00 / [ADD]</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     FEATURED WORK
+     ═══════════════════════════════════════════════════════════ -->
+<section class="section container" aria-labelledby="featured-heading">
+  <div class="reveal">
+    <div class="section-heading">
+      <p class="label-mono" id="featured-heading">Featured work</p>
+      <h2 class="section-title">
+        Three edits that<br>
+        earned the watch time.
+      </h2>
+      <p class="section-intro">
+        Selected projects across broadcast, long-form, short-form and brand work.
+        Open any card for the full breakdown.
+      </p>
+    </div>
+  </div>
+
+  <div class="work-grid reveal" id="featured-grid" style="transition-delay:80ms"></div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     WORK LIBRARY
+     ═══════════════════════════════════════════════════════════ -->
+<section class="section container" id="work" aria-labelledby="work-heading">
+  <div class="reveal">
+    <div class="work-header">
+      <div class="section-heading">
+        <p class="label-mono" id="work-heading">Work library</p>
+        <h2 class="section-title">Browse by format.</h2>
+        <p class="section-intro">
+          Filter by the kind of edit you need. Every card opens a case study
+          with the brief, the approach and the result.
+        </p>
+      </div>
+
+      <div class="filters" role="group" aria-label="Filter projects by category" id="filters"></div>
+    </div>
+  </div>
+
+  <p class="sr-only" aria-live="polite" id="filter-status"></p>
+
+  <div class="work-grid reveal" id="work-grid" style="transition-delay:80ms"></div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     SERVICES
+     ═══════════════════════════════════════════════════════════ -->
+<section class="section container" id="services" aria-labelledby="services-heading">
+  <div class="reveal">
+    <div class="section-heading">
+      <p class="label-mono" id="services-heading">Services</p>
+      <h2 class="section-title">
+        Everything between<br>
+        the raw files and upload.
+      </h2>
+      <p class="section-intro">
+        Editing, motion graphics, design, colour and sound — pick one service
+        or hand over the whole post-production pipeline.
+      </p>
+    </div>
+  </div>
+
+  <ul class="services-grid reveal" id="services-grid" style="transition-delay:80ms"></ul>
+
+  <div class="services-cta reveal" style="transition-delay:120ms">
+    <p>
+      Not sure which service fits? Send over the footage and the goal —
+      I'll tell you what the edit actually needs.
+    </p>
+    <a href="#contact" class="btn btn-primary">Get a quote <span aria-hidden="true">→</span></a>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     TESTIMONIALS
+     ═══════════════════════════════════════════════════════════ -->
+<section class="section container" id="testimonials" aria-labelledby="testimonials-heading">
+  <div class="reveal">
+    <div class="section-heading">
+      <p class="label-mono" id="testimonials-heading">Testimonials</p>
+      <h2 class="section-title">What clients say.</h2>
+    </div>
+  </div>
+  <ul class="testimonials-grid reveal" id="testimonials-grid" style="transition-delay:80ms"></ul>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     ABOUT
+     ═══════════════════════════════════════════════════════════ -->
+<section class="section container" id="about" aria-labelledby="about-heading">
+  <div class="about-grid">
+    <div class="reveal">
+      <div class="about-photo">
+        <div class="about-photo-placeholder">
+          <span class="label-mono">[ADD PHOTO]</span>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="reveal">
+        <div class="section-heading">
+          <p class="label-mono" id="about-heading">About</p>
+          <h2 class="section-title">
+            Five years of<br>
+            cuts and frames.
+          </h2>
+        </div>
+      </div>
+
+      <div class="about-bio reveal" style="transition-delay:80ms">
+        <p>
+          I'm Abdulhamid Hassen — a video editor and graphics designer with
+          5 years of hands-on experience, based in Harar, Ethiopia. I currently
+          work with <span class="highlight">Harari Broadcasting Network</span>,
+          where I cut and design for broadcast, and I take on freelance projects
+          for YouTubers, brands and agencies alongside that.
+        </p>
+        <p>
+          My approach is simple: find the strongest moment, get there faster,
+          and remove anything that gives the viewer a reason to leave. That
+          means aggressive pacing passes, clean audio, and graphics that
+          support the story instead of decorating it.
+        </p>
+        <p class="highlight">
+          [ADD 2–3 SENTENCES ABOUT NOTABLE PROJECTS YOU'VE WORKED ON AND HOW
+          YOU LIKE TO COLLABORATE.]
+        </p>
+      </div>
+
+      <div class="about-block reveal" style="transition-delay:120ms">
+        <p class="label-mono">Tools</p>
+        <ul class="tools-list" id="tools-list"></ul>
+      </div>
+
+      <div class="about-facts reveal" style="transition-delay:160ms">
+        <div class="about-fact">
+          <dt class="label-mono">Experience</dt>
+          <dd>5+ years</dd>
+        </div>
+        <div class="about-fact">
+          <dt class="label-mono">Based in</dt>
+          <dd>Harar, Ethiopia</dd>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     CONTACT
+     ═══════════════════════════════════════════════════════════ -->
+<section class="section container" id="contact" aria-labelledby="contact-heading">
+  <div class="contact-grid">
+    <div>
+      <div class="reveal">
+        <div class="section-heading">
+          <p class="label-mono" id="contact-heading">Contact</p>
+          <h2 class="section-title">
+            Let's make the<br>
+            next cut count.
+          </h2>
+          <p class="section-intro">
+            Send over the footage, the goal and your deadline. I'll come back
+            with a plan, a timeline and a quote.
+          </p>
+        </div>
+      </div>
+
+      <dl class="contact-details reveal" style="transition-delay:80ms">
+        <div>
+          <dt class="label-mono">Phone</dt>
+          <dd><a href="tel:+251922094236" class="contact-link">0922 094 236</a></dd>
+        </div>
+        <div>
+          <dt class="label-mono">Email</dt>
+          <dd><a href="mailto:hello@abdulhamidedits.com" class="contact-link">hello@abdulhamidedits.com</a></dd>
+        </div>
+        <div>
+          <dt class="label-mono">Elsewhere</dt>
+          <dd class="socials">
+            <a href="#">YouTube</a>
+            <a href="#">Instagram</a>
+            <a href="#">LinkedIn</a>
+            <a href="#">Telegram</a>
+          </dd>
+        </div>
+      </dl>
+    </div>
+
+    <div class="reveal" style="transition-delay:100ms">
+      <div class="contact-form-wrap">
+        <form id="contact-form" novalidate>
+          <div class="form-row">
+            <div class="form-field">
+              <label for="name" class="label-mono">Name</label>
+              <input id="name" name="name" type="text" required autocomplete="name" placeholder="Your name" />
+            </div>
+            <div class="form-field">
+              <label for="email" class="label-mono">Email</label>
+              <input id="email" name="email" type="email" required autocomplete="email" placeholder="you@example.com" />
+            </div>
+          </div>
+
+          <div class="form-row" style="margin-top:20px">
+            <div class="form-field">
+              <label for="phone" class="label-mono">Phone (optional)</label>
+              <input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="+251 ..." />
+            </div>
+            <div class="form-field">
+              <label for="budget" class="label-mono">Budget range (optional)</label>
+              <select id="budget" name="budget">
+                <option value="">Prefer not to say</option>
+                <option value="&lt;500">Under $500</option>
+                <option value="500-1500">$500 – $1,500</option>
+                <option value="1500-5000">$1,500 – $5,000</option>
+                <option value="5000+">$5,000+</option>
+                <option value="retainer">Monthly retainer</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-field" style="margin-top:20px">
+            <label for="details" class="label-mono">Project details</label>
+            <textarea id="details" name="details" required rows="5"
+              placeholder="What are you making, how much footage is there, and when do you need it?"></textarea>
+          </div>
+
+          <!-- Honeypot -->
+          <div class="honeypot" aria-hidden="true">
+            <label for="_gotcha">Leave this field empty</label>
+            <input id="_gotcha" name="_gotcha" type="text" tabindex="-1" autocomplete="off" />
+          </div>
+
+          <button type="submit" class="btn btn-primary" style="width:100%;margin-top:20px" id="submit-btn">
+            Send project brief
+          </button>
+
+          <p class="form-status" aria-live="polite" id="form-status" style="margin-top:16px"></p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ═══════════════════════════════════════════════════════════
+     FOOTER
+     ═══════════════════════════════════════════════════════════ -->
+<footer class="site-footer">
+  <div class="container footer-top">
+    <div>
+      <a href="#top" class="footer-brand" aria-label="Abdulhamid Hassen — back to top">
+        <span class="brand-mark" aria-hidden="true">AH</span>
+        <span class="footer-brand-name">Abdulhamid Hassen</span>
+      </a>
+      <p class="footer-tagline">Edits that keep viewers watching.</p>
+    </div>
+
+    <nav class="footer-nav" aria-label="Footer">
+      <ul>
+        <li><a href="#work">Work</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <ul class="footer-social">
+      <li><a href="#">YouTube</a></li>
+      <li><a href="#">Instagram</a></li>
+      <li><a href="#">LinkedIn</a></li>
+      <li><a href="tel:+251922094236">0922 094 236</a></li>
+    </ul>
+  </div>
+
+  <div class="container footer-bottom">
+    <p>© <span id="year"></span> Abdulhamid Hassen. All rights reserved.</p>
+    <p>Video &amp; Graphics Designer · Harar, Ethiopia</p>
+  </div>
+</footer>
+
+<!-- ═══════════════════════════════════════════════════════════
+     MODAL
+     ═══════════════════════════════════════════════════════════ -->
+<dialog id="project-modal" aria-labelledby="modal-title">
+  <div class="modal-inner">
+    <button type="button" class="modal-close" id="modal-close" aria-label="Close dialog">
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+        <path d="M1 1l12 12M13 1L1 13" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+      </svg>
+    </button>
+
+    <p class="label-mono" id="modal-meta"></p>
+    <h2 class="modal-title" id="modal-title"></h2>
+    <p class="modal-client" id="modal-client"></p>
+
+    <div class="modal-video" id="modal-video"></div>
+    <p class="modal-desc" id="modal-desc"></p>
+
+    <dl class="modal-results" id="modal-results" hidden></dl>
+
+    <a href="#" class="btn btn-primary modal-live" id="modal-live" hidden target="_blank" rel="noopener noreferrer">
+      Watch the full video <span aria-hidden="true">↗</span>
+    </a>
+  </div>
+</dialog>
+
+<script>
+/* ─────────────────────────────────────────────────────────────
+   DATA — Replace every bracketed value with real content.
+   ───────────────────────────────────────────────────────────── */
+const SITE = {
+  email: "hello@abdulhamidedits.com",  // [REPLACE] real email
+  phone: "0922094236",                  // real
+  phoneIntl: "+251922094236",           // real (international format)
+  location: "Harar, Ethiopia",
+  tools: [
+    "Adobe Premiere Pro",
+    "After Effects",
+    "DaVinci Resolve",
+    "Photoshop",
+    "Illustrator",
+    "Audition",
+    "CapCut",
+  ],
+};
+
+/* Graphics design added — you're a designer as well as an editor. */
+const SERVICES = [
+  {
+    title: "Video editing",
+    description: "Long-form YouTube and broadcast cuts — story-first assembly, pacing, and b-roll that holds attention past the 30-second drop-off.",
+    bullets: ["Hook-first structure", "Pacing & retention passes", "B-roll + sound layering"],
+  },
+  {
+    title: "Short-form editing",
+    description: "Shorts, Reels and TikToks cut from long-form footage or shot native — built for the scroll.",
+    bullets: ["Vertical reframing", "Animated captions", "Hook variants for testing"],
+  },
+  {
+    title: "Graphics design",
+    description: "Thumbnails, posters, social media graphics and brand assets that match the edit's tone.",
+    bullets: ["Thumbnails", "Social posts", "Brand kits"],
+  },
+  {
+    title: "Motion graphics & titles",
+    description: "Clean lower thirds, kinetic type, and infographics that make complex ideas land fast.",
+    bullets: ["Lower thirds", "Kinetic typography", "Data & chart animation"],
+  },
+  {
+    title: "Colour grading",
+    description: "Consistent, watchable colour across every camera, every episode, every upload.",
+    bullets: ["Shot matching", "Log / RAW conversion", "Look development"],
+  },
+  {
+    title: "Sound design & mixing",
+    description: "Dialogue that stays intelligible, music that supports the cut, SFX that add weight.",
+    bullets: ["Dialogue cleanup", "Loudness normalisation", "SFX design"],
+  },
+];
+
+/* [REPLACE] Real quotes only. Delete entries you can't verify —
+   the section hides itself when this array is empty. */
+const TESTIMONIALS = [
+  {
+    quote: "[ADD REAL TESTIMONIAL — 1–2 sentences from a paying client or colleague.]",
+    author: "[ADD CLIENT NAME]",
+    role: "[ADD ROLE / CHANNEL]",
+    href: "#",
+  },
+  {
+    quote: "[ADD REAL TESTIMONIAL — 1–2 sentences from a paying client or colleague.]",
+    author: "[ADD CLIENT NAME]",
+    role: "[ADD ROLE / CHANNEL]",
+    href: "#",
+  },
+  {
+    quote: "[ADD REAL TESTIMONIAL — 1–2 sentences from a paying client or colleague.]",
+    author: "[ADD CLIENT NAME]",
+    role: "[ADD ROLE / CHANNEL]",
+    href: "#",
+  },
+];
+
+/* [REPLACE] Every project below with a real edit you've done.
+   Set `featured: true` on 3 projects to show them in Featured Work.
+   `results` accepts real, verifiable numbers only. */
+const PROJECTS = [
+  {
+    id: "project-01",
+    title: "[ADD PROJECT TITLE]",
+    client: "Harari Broadcasting Network",   // real client
+    category: "Broadcast",
+    description: "[ADD 1–2 SENTENCES: what the piece was, what you did, and how it landed.]",
+    thumbnail: "",
+    embedUrl: "",
+    liveUrl: "",
+    results: [],
+    year: "2025",
+    featured: true,
+  },
+  {
+    id: "project-02",
+    title: "[ADD PROJECT TITLE]",
+    client: "[ADD CLIENT / CHANNEL]",
+    category: "YouTube",
+    description: "[ADD 1–2 SENTENCES: the goal, what you did, and what changed after the edit.]",
+    thumbnail: "",
+    embedUrl: "",
+    liveUrl: "",
+    results: [],
+    year: "2025",
+    featured: true,
+  },
+  {
+    id: "project-03",
+    title: "[ADD PROJECT TITLE]",
+    client: "[ADD CLIENT / CHANNEL]",
+    category: "Shorts & Reels",
+    description: "[ADD 1–2 SENTENCES: the goal, what you did, and what changed after the edit.]",
+    thumbnail: "",
+    embedUrl: "",
+    liveUrl: "",
+    results: [],
+    year: "2024",
+    featured: true,
+  },
+  {
+    id: "project-04",
+    title: "[ADD PROJECT TITLE]",
+    client: "[ADD CLIENT / CHANNEL]",
+    category: "Ads",
+    description: "[ADD 1–2 SENTENCES: the goal, what you did, and what changed after the edit.]",
+    thumbnail: "",
+    embedUrl: "",
+    liveUrl: "",
+    results: [],
+    year: "2024",
+  },
+  {
+    id: "project-05",
+    title: "[ADD PROJECT TITLE]",
+    client: "[ADD CLIENT / CHANNEL]",
+    category: "Documentary",
+    description: "[ADD 1–2 SENTENCES: the goal, what you did, and what changed after the edit.]",
+    thumbnail: "",
+    embedUrl: "",
+    liveUrl: "",
+    results: [],
+    year: "2024",
+  },
+  {
+    id: "project-06",
+    title: "[ADD PROJECT TITLE]",
+    client: "[ADD CLIENT / CHANNEL]",
+    category: "Gaming",
+    description: "[ADD 1–2 SENTENCES: the goal, what you did, and what changed after the edit.]",
+    thumbnail: "",
+    embedUrl: "",
+    liveUrl: "",
+    results: [],
+    year: "2023",
+  },
+];
+
+const CATEGORIES = ["Broadcast", "YouTube", "Shorts & Reels", "Ads", "Documentary", "Gaming"];
+
+/* ─────────────────────────────────────────────────────────────
+   HELPERS
+   ───────────────────────────────────────────────────────────── */
+const $ = (sel, ctx = document) => ctx.querySelector(sel);
+const $$ = (sel, ctx = document) => Array.from(ctx.querySelectorAll(sel));
+const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+function escapeHtml(str) {
+  return String(str)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
+}
+
+/* ─────────────────────────────────────────────────────────────
+   RENDER: PROJECT CARD
+   ───────────────────────────────────────────────────────────── */
+function projectCard(project) {
+  const thumb = project.thumbnail
+    ? `<img src="${escapeHtml(project.thumbnail)}" alt="${escapeHtml(project.title)} — ${escapeHtml(project.category)} edit" loading="lazy" decoding="async" />`
+    : `<div class="project-thumb-placeholder"><span class="label-mono">[ADD THUMBNAIL]</span></div>`;
+
+  return `
+    <li>
+      <article>
+        <button type="button" class="project-card" data-project-id="${escapeHtml(project.id)}" aria-haspopup="dialog">
+          <div class="project-thumb">
+            ${thumb}
+            <span class="project-tag">${escapeHtml(project.category)}</span>
+            <span class="project-play" aria-hidden="true">
+              <svg width="12" height="13" viewBox="0 0 12 13" fill="currentColor"><path d="M0 0l12 6.5L0 13z"/></svg>
+            </span>
+          </div>
+          <div class="project-body">
+            <div class="project-title-row">
+              <h3 class="project-title">${escapeHtml(project.title)}</h3>
+              <span class="project-year">${escapeHtml(project.year)}</span>
+            </div>
+            <p class="project-client">${escapeHtml(project.client)}</p>
+            <p class="project-desc">${escapeHtml(project.description)}</p>
+            <span class="project-cta">
+              View project
+              <span aria-hidden="true">→</span>
+            </span>
+          </div>
+        </button>
+      </article>
+    </li>
+  `;
+}
+
+function renderGrid(el, projects) {
+  if (!projects.length) {
+    el.innerHTML = `<li style="grid-column:1/-1"><p class="empty-state">[ADD PROJECTS FOR THIS CATEGORY]</p></li>`;
+    return;
+  }
+  el.innerHTML = projects.map(projectCard).join("");
+}
+
+/* ─────────────────────────────────────────────────────────────
+   RENDER: SERVICES
+   ───────────────────────────────────────────────────────────── */
+function renderServices() {
+  const grid = $("#services-grid");
+  grid.innerHTML = SERVICES.map((s, i) => `
+    <li class="service">
+      <span class="label-mono">${String(i + 1).padStart(2, "0")}</span>
+      <h3 class="service-title">${escapeHtml(s.title)}</h3>
+      <p class="service-desc">${escapeHtml(s.description)}</p>
+      <ul class="service-bullets">
+        ${s.bullets.map(b => `<li>${escapeHtml(b)}</li>`).join("")}
+      </ul>
+    </li>
+  `).join("");
+}
+
+/* ─────────────────────────────────────────────────────────────
+   RENDER: TESTIMONIALS (hides section if empty)
+   ───────────────────────────────────────────────────────────── */
+function renderTestimonials() {
+  const section = $("#testimonials");
+  const grid = $("#testimonials-grid");
+
+  if (!TESTIMONIALS.length) {
+    section.hidden = true;
+    return;
+  }
+
+  grid.innerHTML = TESTIMONIALS.map(t => `
+    <li>
+      <figure class="testimonial">
+        <span class="testimonial-quote-mark" aria-hidden="true">"</span>
+        <blockquote>${escapeHtml(t.quote)}</blockquote>
+        <figcaption>
+          <span class="testimonial-author">${escapeHtml(t.author)}</span>
+          <span class="testimonial-role">${escapeHtml(t.role)}</span>
+          ${t.href && t.href !== "#"
+            ? `<a href="${escapeHtml(t.href)}" class="testimonial-source" target="_blank" rel="noopener noreferrer">View source <span aria-hidden="true">↗</span></a>`
+            : ""}
+        </figcaption>
+      </figure>
+    </li>
+  `).join("");
+}
+
+/* ─────────────────────────────────────────────────────────────
+   RENDER: TOOLS
+   ───────────────────────────────────────────────────────────── */
+function renderTools() {
+  $("#tools-list").innerHTML = SITE.tools
+    .map(t => `<li>${escapeHtml(t)}</li>`)
+    .join("");
+}
+
+/* ─────────────────────────────────────────────────────────────
+   RENDER: FILTERS
+   ───────────────────────────────────────────────────────────── */
+let activeFilter = "All";
+
+function renderFilters() {
+  const filters = $("#filters");
+  const all = ["All", ...CATEGORIES];
+  filters.innerHTML = all.map(cat => `
+    <button type="button" class="filter-btn" data-filter="${escapeHtml(cat)}"
+      aria-pressed="${cat === activeFilter ? "true" : "false"}">
+      ${escapeHtml(cat)}
+    </button>
+  `).join("");
+
+  filters.addEventListener("click", (e) => {
+    const btn = e.target.closest("[data-filter]");
+    if (!btn) return;
+    activeFilter = btn.dataset.filter;
+    $$(".filter-btn").forEach(b => {
+      b.setAttribute("aria-pressed", b.dataset.filter === activeFilter ? "true" : "false");
+    });
+    applyFilter();
+  });
+}
+
+function applyFilter() {
+  const visible = activeFilter === "All"
+    ? PROJECTS
+    : PROJECTS.filter(p => p.category === activeFilter);
+
+  renderGrid($("#work-grid"), visible);
+
+  const status = $("#filter-status");
+  status.textContent = `${visible.length} project${visible.length === 1 ? "" : "s"} shown.`;
+}
+
+/* ─────────────────────────────────────────────────────────────
+   MODAL
+   ───────────────────────────────────────────────────────────── */
+const modal = $("#project-modal");
+
+function openProject(id) {
+  const project = PROJECTS.find(p => p.id === id);
+  if (!project) return;
+
+  $("#modal-meta").textContent = `${project.category} · ${project.year}`;
+  $("#modal-title").textContent = project.title;
+  $("#modal-client").textContent = project.client;
+  $("#modal-desc").textContent = project.description;
+
+  const videoWrap = $("#modal-video");
+  if (project.embedUrl) {
+    videoWrap.innerHTML = `
+      <iframe src="${escapeHtml(project.embedUrl)}"
+        title="${escapeHtml(project.title)} — video player"
+        loading="lazy" allowfullscreen
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+    `;
+  } else {
+    videoWrap.innerHTML = `<div class="modal-video-placeholder"><span class="label-mono">[ADD VIDEO EMBED URL]</span></div>`;
+  }
+
+  const resultsEl = $("#modal-results");
+  if (project.results && project.results.length) {
+    resultsEl.hidden = false;
+    resultsEl.innerHTML = project.results.map(r => `
+      <div>
+        <dt class="label-mono">${escapeHtml(r.label)}</dt>
+        <dd>${escapeHtml(r.value)}</dd>
+      </div>
+    `).join("");
+  } else {
+    resultsEl.hidden = true;
+    resultsEl.innerHTML = "";
+  }
+
+  const liveEl = $("#modal-live");
+  if (project.liveUrl) {
+    liveEl.hidden = false;
+    liveEl.href = project.liveUrl;
+  } else {
+    liveEl.hidden = true;
+  }
+
+  if (typeof modal.showModal === "function") {
+    modal.showModal();
+  } else {
+    modal.setAttribute("open", "");
+  }
+}
+
+function closeModal() {
+  if (typeof modal.close === "function") modal.close();
+  else modal.removeAttribute("open");
+}
+
+function wireModal() {
+  $("#modal-close").addEventListener("click", closeModal);
+
+  modal.addEventListener("click", (e) => {
+    if (e.target === modal) closeModal();
+  });
+
+  document.addEventListener("click", (e) => {
+    const card = e.target.closest("[data-project-id]");
+    if (card) openProject(card.dataset.projectId);
+  });
+}
+
+/* ─────────────────────────────────────────────────────────────
+   HEADER: scroll state, mobile menu, scroll spy
+   ───────────────────────────────────────────────────────────── */
+function wireHeader() {
+  const header = $("#site-header");
+  const toggle = $("#menu-toggle");
+  const mobileMenu = $("#mobile-menu");
+
+  const onScroll = () => {
+    header.classList.toggle("scrolled", window.scrollY > 8);
+  };
+  onScroll();
+  window.addEventListener("scroll", onScroll, { passive: true });
+
+  toggle.addEventListener("click", () => {
+    const open = toggle.getAttribute("aria-expanded") === "true";
+    toggle.setAttribute("aria-expanded", String(!open));
+    toggle.setAttribute("aria-label", open ? "Open menu" : "Close menu");
+    mobileMenu.classList.toggle("open", !open);
+    header.classList.toggle("open", !open);
+    document.body.style.overflow = !open ? "hidden" : "";
+  });
+
+  $$("#mobile-menu a").forEach(a => {
+    a.addEventListener("click", () => {
+      toggle.setAttribute("aria-expanded", "false");
+      toggle.setAttribute("aria-label", "Open menu");
+      mobileMenu.classList.remove("open");
+      header.classList.remove("open");
+      document.body.style.overflow = "";
+    });
+  });
+
+  const ids = ["work", "services", "about", "contact"];
+  const sections = ids
+    .map(id => document.getElementById(id))
+    .filter(Boolean);
+
+  if (sections.length && "IntersectionObserver" in window) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const id = entry.target.id;
+          $$("[data-nav]").forEach(link => {
+            if (link.dataset.nav === id) link.setAttribute("aria-current", "location");
+            else link.removeAttribute("aria-current");
+          });
+        }
+      });
+    }, { rootMargin: "-45% 0px -50% 0px", threshold: 0 });
+
+    sections.forEach(s => observer.observe(s));
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────
+   REVEAL ON SCROLL
+   ───────────────────────────────────────────────────────────── */
+function wireReveal() {
+  const els = $$(".reveal");
+  if (reduceMotion || !("IntersectionObserver" in window)) {
+    els.forEach(el => el.classList.add("visible"));
+    return;
+  }
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { rootMargin: "-80px 0px", threshold: 0 });
+
+  els.forEach(el => observer.observe(el));
+}
+
+/* ─────────────────────────────────────────────────────────────
+   CONTACT FORM
+   ───────────────────────────────────────────────────────────── */
+function wireForm() {
+  const form = $("#contact-form");
+  const status = $("#form-status");
+  const btn = $("#submit-btn");
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const data = Object.fromEntries(new FormData(form).entries());
+
+    if (data._gotcha) return;
+
+    if (!data.name || !data.email || !data.details) {
+      status.className = "form-status error";
+      status.textContent = "Please fill in your name, email and project details.";
+      return;
+    }
+
+    btn.disabled = true;
+    btn.textContent = "Sending…";
+    status.className = "form-status";
+    status.textContent = "";
+
+    // ─────────────────────────────────────────────────────────
+    // [REPLACE] Wire this to a real backend before launch:
+    //   • Formspree:  https://formspree.io/f/YOUR_ID
+    //   • Web3Forms:  https://api.web3forms.com/submit
+    //   • Netlify Forms: add data-netlify="true" to the <form>
+    // Currently simulated so you can preview the success state.
+    // ─────────────────────────────────────────────────────────
+    try {
+      await new Promise((resolve) => setTimeout(resolve, 700));
+
+      status.className = "form-status success";
+      status.textContent = "Thanks — your brief landed. I usually reply within one business day.";
+      form.reset();
+    } catch (err) {
+      status.className = "form-status error";
+      status.textContent = "Something went wrong. Please call 0922 094 236 or email me directly.";
+    } finally {
+      btn.disabled = false;
+      btn.textContent = "Send project brief";
+    }
+  });
+}
+
+/* ─────────────────────────────────────────────────────────────
+   INIT
+   ───────────────────────────────────────────────────────────── */
+function init() {
+  $("#year").textContent = new Date().getFullYear();
+
+  renderServices();
+  renderTestimonials();
+  renderTools();
+  renderFilters();
+
+  const featured = PROJECTS.filter(p => p.featured);
+  renderGrid($("#featured-grid"), featured);
+  applyFilter();
+
+  wireHeader();
+  wireModal();
+  wireForm();
+  wireReveal();
+
+  if (!featured.length) {
+    $("#featured-grid").closest("section").hidden = true;
+  }
+}
+
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", init);
+} else {
+  init();
+}
+</script>
+
+</body>
+</html>
